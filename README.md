@@ -1,49 +1,98 @@
 <div align="center">
-  <h1>Akhil Vamsi Krishna Gogula</h1>
-  <p><b>Senior Software Quality Architect | AI & Test Automation Lead</b></p>
-  <p><i>🇩🇪 Professional working proficiency in German (B2) & Fluent English | Based in Bavaria, Germany</i></p>
+
+# Akhil Vamsi Krishna Gogula
+
+**Senior Software Quality Architect · AI & Test Automation Lead**
+
+Bavaria, Germany · English (fluent) · German (B2)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/akhil-vamsi-krishna-gogula)
+[![Live project](https://img.shields.io/badge/Live_project-Kanban_Board-000000?logo=vercel&logoColor=white)](https://kanban-board-seven-lilac.vercel.app/)
+
 </div>
 
-> **Value Proposition for Stakeholders:** I design scalable test architectures and risk-based QA strategies that bridge the gap between engineering speed and absolute system reliability. From safety-critical Medical Devices (IEC 62304/60601) to AI-driven industrial loops, I ensure audit-ready compliance and zero-defect deployments.
+I design test architectures and risk-based quality strategies for systems where failure is expensive: medical devices under IEC 62304 / IEC 60601, industrial automation, and now LLM-powered software. My current focus is making AI features testable, measurable and safe to release.
 
-## 🔬 Featured Open Source Architectures
-*Review my repositories for clean code, architectural patterns, and CI/CD integration.*
+---
 
-* 🤖 [**Production-Style LLM Evaluation (LangSmith)**](https://github.com/akhilvamsi-gogula/Production-Style-LLM-Evaluation-with-LangSmith)
-  * **Focus:** AI QA & Compliance (as requested in modern MedTech/AI roles)
-  * **Impact:** CI/CD-style regression testing for non-deterministic AI agents using Python and LangSmith. Evaluates LLM outputs with strict verification heuristics.
-* 🌐 [**Enterprise API Test Framework (Pytest)**](https://github.com/akhilvamsi-gogula/python-api-test-automation-framework)
-  * **Focus:** Backend / Distributed Microservices QA
-  * **Impact:** Production-grade REST API automation framework featuring environment management, CRUD validation, and automated HTML reporting.
-* 🎭 [**Playwright Enterprise Framework**](https://github.com/akhilvamsi-gogula/playwright-enterprise-framework)
-  * **Focus:** Frontend / E2E GUI Testing
-  * **Impact:** Scalable UI testing framework using JS/Playwright. Built to handle complex state management, cross-browser parallel execution, and resilient selector strategies.
+## Featured work
 
-## 🎯 Engineering Leadership & Core Expertise
+### [Kanban Board: full-stack AI app with production-grade testing](https://github.com/akhilvamsi-gogula/Kanban-board)
+`Next.js 16` `FastAPI` `Postgres` `Groq` `pytest` `Vitest` `Playwright` `GitHub Actions` · [Live demo](https://kanban-board-seven-lilac.vercel.app/)
 
-### 🧠 Test Strategy & Risk-Based Quality
-- **Release Gatekeeping:** Led risk-based quality assessments for Go/No-Go release decisions in highly regulated environments (Medical Devices, Industrial Automation).
-- **Process Mentorship:** Designed intelligent defect triage workflows and mentored cross-functional engineering teams to eliminate recurring regressions.
+A multi-user Kanban app with an AI co-pilot that reads and edits boards and accepts file attachments. I built, tested and deployed it solo, using AI coding tools (Claude Code) under my own test strategy and review. Small in features, deliberate in quality:
 
-### ⚙️ Backend, AI & Non-Functional Testing
-- **AI Validation**: Architected Python/Pytest infrastructures to validate LLM-generated IEC 61131-3 PLC code, simulating hardware-adjacent control systems via PyADS.
-- **Security & Penetration Testing:** Conducted vulnerability assessments and penetration testing on embedded medical IoT devices and automotive ECUs.
-- **Microservices Integration:** Prevented critical post-release incidents by building robust ZeroMQ and REST API tests across distributed architectures for a medical device manufacturer.
+- **Layered test strategy:** 134 backend tests against a real Postgres (no DB mocks), 75 frontend unit/component tests, 13 Playwright E2E scenarios across 4 device profiles (desktop, iPhone 13, Pixel 7, Galaxy S24 Ultra), a concurrent-user load check, and a manual real-device checklist.
+- **Testing a non-deterministic AI feature:** deterministic contract tests in CI with faked model replies, plus a separate eval harness against the live model. The eval caught a real **prompt-injection defect** (an instruction hidden in an attached file renamed every column); fixed by prompt ordering and now guarded by a regression case.
+- **Security and isolation:** ownership-scoped queries (foreign boards return 404, not 403), session and reset-token expiry, per-account AI rate limits, upload hardening (type spoofing, zip bombs, oversize bodies rejected before read).
+- **Concurrency and performance:** 16 simultaneous saves stay consistent; a 25-user load run dropped from 21 s to 3.5 s after replacing a global lock with a connection pool, with per-user data isolation verified.
+- **Defect log:** 11 real defects found by testing, each traced to the test that now guards it (real-touch drag on Android, out-of-order saves, mid-width layout cut-off, and more).
 
-## 🛠 Core Tech Stack & Standards
+### [Production-Style LLM Evaluation with LangSmith](https://github.com/akhilvamsi-gogula/Production-Style-LLM-Evaluation-with-LangSmith)
+`Python` `LangSmith` `Groq` `LLM-as-a-judge`
 
-| Category | Technologies & Methodologies |
+An evaluation pipeline for an LLM support assistant: versioned golden datasets with edge and adversarial cases, keyword-coverage checks for factual accuracy, an LLM-as-a-judge for tone and helpfulness, prompt-version comparison, and an automated **Go/No-Go release report** driven by score thresholds.
+
+### [QuantizedQA: Steam web test automation](https://github.com/QuantizedQA/Quantized_QA_Steampowered_Web) · *Technical Lead*
+`Playwright` `TypeScript` `GitHub Actions` `Jira`
+
+A hobby QA project with a 5-person team spread across countries and time zones. I lead the team: running stand-ups, planning and assigning work on the Jira board, reviewing pull requests and maintaining the repository.
+
+### Supporting repositories
+
+| Repository | What it shows |
 |---|---|
-| **Test Automation** | Python, JavaScript, Pytest, Playwright, Squish/Qt (PySide2), Google Test (C++) |
-| **CI/CD & Virtualization** | Docker, Azure DevOps, GitLab CI, Jenkins, Linux/Ubuntu |
-| **AI QA** | Prompt Engineering, LangSmith, Local LLMs, ISTQB® GenAI Certified |
-| **Domain Standards** | IEC 60601, IEC 62304, ISO 13485 (Medical), TwinCAT (Industrial) |
+| [python-api-test-automation-framework](https://github.com/akhilvamsi-gogula/python-api-test-automation-framework) | Pytest + Requests against live REST APIs (GitHub, JSONPlaceholder): auth, CRUD, contract and negative tests, HTML and coverage reports in GitHub Actions |
+| [playwright-tests](https://github.com/akhilvamsi-gogula/playwright-tests) | Playwright (JavaScript) UI and API specs with Page Object Model and role-based, accessibility-first locators |
+| [langsmith-tracing-evaluation](https://github.com/akhilvamsi-gogula/langsmith-tracing-evaluation) | LangSmith tracing, exact-match / lenient / multi-metric evaluators, prompt A/B experiments |
 
-## 📐 QA Philosophy
-1. **Shift-Left as a Standard:** Quality is not a phase at the end of a sprint. I embed static analysis, unit test coverage metrics, and integration hooks directly into the initial PR phase.
-2. **Deterministic AI Testing:** AI is an incredible accelerator, but validating AI-generated code requires strict, logic-based simulation layers. I build the safety nets that make AI deployable.
-3. **Flaky Tests are Dead Code:** I prioritize test resilience. A failed pipeline must tell the developer *exactly* what broke within 60 seconds, reducing debugging fatigue.
+---
 
-## 📬 Connect with Me
-- **LinkedIn:** [Akhil Vamsi Krishna Gogula](https://linkedin.com/in/akhil-vamsi-krishna-gogula)
-- **Location:** Bavaria, Germany
+## What I bring to a team
+
+**Test strategy and release quality**
+- Risk-based test planning and Go/No-Go release assessments in regulated environments (medical devices, industrial automation).
+- Defect triage workflows and mentoring engineers to stop recurring regressions at the source.
+
+**AI quality engineering**
+- Validation of LLM-generated IEC 61131-3 PLC code with a Python/Pytest harness, simulating control-system behaviour via PyADS (TwinCAT).
+- Evaluation design for LLM features: golden datasets, contract tests, live-model evals, prompt-injection cases.
+
+**System and integration testing**
+- ZeroMQ and REST integration tests across distributed services for a medical device manufacturer.
+- GUI automation for Qt applications with Squish (PySide2), unit testing in C++ with Google Test.
+- Hands-on security testing work on connected medical devices and automotive ECUs as part of project test scopes.
+
+**Technical leadership**
+- Leading a distributed, multi-time-zone team: planning, task assignment, code review and repository ownership.
+
+---
+
+## Tech stack
+
+| Area | Tools |
+|---|---|
+| Languages | Python, TypeScript, JavaScript, C++ |
+| Test automation | Pytest, Playwright, Vitest + Testing Library, Squish (Qt), Google Test, Requests |
+| AI / LLM quality | LangSmith, LLM-as-a-judge, eval harnesses, Groq, prompt engineering |
+| CI/CD and infrastructure | GitHub Actions, GitLab CI, Azure DevOps, Jenkins, Docker, Linux |
+| Web and data | Next.js, React, FastAPI, Postgres |
+| Standards | IEC 62304, IEC 60601, ISO 13485, IEC 61131-3 |
+| Certification | ISTQB® Certified Tester: Testing with Generative AI (CT-GenAI) |
+
+---
+
+## How I work
+
+1. **Test where the risk is.** Coverage numbers matter less than knowing which failure would hurt the user or the audit most, and testing that first.
+2. **Real dependencies over mocks where it counts.** Databases, browsers and touch input behave differently from their fakes. Mocks belong at slow or non-deterministic boundaries, such as a live LLM.
+3. **Non-deterministic systems still need deterministic gates.** Put the contract around the model in CI; evaluate the model itself separately, on purpose.
+4. **A failing test should explain itself.** Flaky or unclear tests cost more trust than they buy. Every fixed defect gets a regression test.
+
+---
+
+<div align="center">
+
+[LinkedIn](https://linkedin.com/in/akhil-vamsi-krishna-gogula)
+
+</div>
