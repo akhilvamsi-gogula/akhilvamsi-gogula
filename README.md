@@ -4,7 +4,9 @@
 
 **Senior Software Quality Architect · AI & Test Automation Lead**
 
-Bavaria, Germany · English (fluent) · German (B2)
+Bavaria, Germany · English: business fluent · German: B2 ([CEFR](https://www.coe.int/en/web/common-european-framework-reference-languages))
+
+**Open to Software Quality Architect, QA Lead and AI Test Lead roles in Germany**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/akhil-vamsi-krishna-gogula)
 [![Live project](https://img.shields.io/badge/Live_project-Kanban_Board-000000?logo=vercel&logoColor=white)](https://kanban-board-seven-lilac.vercel.app/)
@@ -93,6 +95,7 @@ A hobby QA project with a 5-person team spread across countries and time zones. 
 
 <div align="center">
 
+Open to Software Quality Architect, QA Lead and AI Test Lead roles in Germany.<br>
 [LinkedIn](https://linkedin.com/in/akhil-vamsi-krishna-gogula)
 
 </div>
