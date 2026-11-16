@@ -13,7 +13,7 @@ Bavaria, Germany · English: business fluent · German: B2 ([CEFR](https://www.c
 
 </div>
 
-I design test architectures and risk-based quality strategies for systems where failure is expensive: medical devices under IEC 62304 / IEC 60601, industrial automation, and now LLM-powered software. My current focus is making AI features testable, measurable and safe to release.
+I design test architectures, quality strategies and release processes that let teams ship fast without losing control of risk. My background spans safety-critical and regulated products (medical devices under IEC 62304 / IEC 60601, industrial automation, automotive) as well as web, backend and AI-powered software. The methods carry across domains: risk-based testing, traceability, test automation at every layer, CI/CD quality gates and clear release decisions. Recently I have added LLM evaluation and AI quality engineering to that toolkit.
 
 ---
 
@@ -52,9 +52,20 @@ A hobby QA project with a 5-person team spread across countries and time zones. 
 
 ## What I bring to a team
 
-**Test strategy and release quality**
-- Risk-based test planning and Go/No-Go release assessments in regulated environments (medical devices, industrial automation).
-- Defect triage workflows and mentoring engineers to stop recurring regressions at the source.
+**Domains**
+- *Safety-critical and regulated:* medical devices, industrial automation (PLC / TwinCAT), automotive.
+- *Commercial software:* web applications, REST APIs and distributed backend services, AI / LLM products.
+
+**Quality engineering and test strategy**
+- Test strategies, test plans and test architectures from unit to system level, aligned to product risk.
+- Risk-based testing, requirements-to-test traceability and audit-ready test evidence.
+- Go/No-Go release assessments, quality gates in CI/CD, and quality metrics that teams act on.
+- Defect triage and root-cause analysis workflows; mentoring engineers to stop recurring regressions at the source.
+- Shift-left practices: testability reviews, static analysis and test coverage in the pull-request stage.
+
+**Test automation and frameworks**
+- Building maintainable automation frameworks for UI, API and integration testing (Python, TypeScript, JavaScript, C++).
+- Non-functional testing: performance and load, concurrency, cross-device and cross-browser coverage.
 
 **AI quality engineering**
 - Validation of LLM-generated IEC 61131-3 PLC code with a Python/Pytest harness, simulating control-system behaviour via PyADS (TwinCAT).
@@ -95,7 +106,6 @@ A hobby QA project with a 5-person team spread across countries and time zones. 
 
 <div align="center">
 
-Open to Software Quality Architect, QA Lead and AI Test Lead roles in Germany.<br>
 [LinkedIn](https://linkedin.com/in/akhil-vamsi-krishna-gogula)
 
 </div>
